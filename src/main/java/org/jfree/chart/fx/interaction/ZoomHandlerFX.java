@@ -48,7 +48,7 @@ import org.jfree.chart.fx.ChartViewer;
 import org.jfree.chart.plot.Plot;
 import org.jfree.chart.plot.PlotRenderingInfo;
 import org.jfree.chart.plot.Zoomable;
-import org.jfree.util.ShapeUtilities;
+import org.jfree.chart.util.ShapeUtils;
 
 /**
  * Handles drag zooming of charts on a {@link ChartCanvas}.  This 
@@ -110,7 +110,7 @@ public class ZoomHandlerFX extends AbstractMouseHandlerFX {
         Point2D pt = new Point2D.Double(e.getX(), e.getY());
         Rectangle2D dataArea = canvas.findDataArea(pt);
         if (dataArea != null) {
-            this.startPoint = ShapeUtilities.getPointInRectangle(e.getX(),
+            this.startPoint = ShapeUtils.getPointInRectangle(e.getX(),
                     e.getY(), dataArea);
         } else {
             this.startPoint = null;
