@@ -113,9 +113,9 @@ public class PieChartFXDemo1 extends Application {
         plot.setSectionPaint("Samsung", createGradientPaint(new Color(255, 200, 200), Color.RED));
         plot.setSectionPaint("Apple", createGradientPaint(new Color(200, 255, 200), Color.GREEN));
         plot.setSectionPaint("Nokia", createGradientPaint(new Color(200, 255, 200), Color.YELLOW));
-        plot.setBaseSectionOutlinePaint(Color.WHITE);
+        plot.setDefaultSectionOutlinePaint(Color.WHITE);
         plot.setSectionOutlinesVisible(true);
-        plot.setBaseSectionOutlineStroke(new BasicStroke(2.0f));
+        plot.setDefaultSectionOutlineStroke(new BasicStroke(2.0f));
 
         // customise the section label appearance
         plot.setLabelFont(new Font("Courier New", Font.BOLD, 20));
