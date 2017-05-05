@@ -1,7 +1,7 @@
 /* ----------------------------
  * CrosshairOverlayFXDemo1.java
  * ----------------------------
- * Copyright (c) 2014, Object Refinery Limited.
+ * Copyright (c) 2014, 2017, Object Refinery Limited.
  * All rights reserved.
  *
  * https://github.com/jfree/jfreechart-fx
@@ -121,7 +121,7 @@ public class CrosshairOverlayFXDemo1 extends Application {
         
     }
  
-    public static XYDataset createDataset() {
+    private static XYDataset createDataset() {
         XYSeries series = new XYSeries("S1");
         for (int x = 0; x < 10; x++) {
             series.add(x, x + Math.random() * 4.0);
@@ -130,7 +130,7 @@ public class CrosshairOverlayFXDemo1 extends Application {
         return dataset;
     }
 
-    public static JFreeChart createChart(XYDataset dataset) {
+    private static JFreeChart createChart(XYDataset dataset) {
         JFreeChart chart = ChartFactory.createXYLineChart(
                 "CrosshairOverlayDemo1", "X", "Y", dataset);
         return chart;
@@ -142,6 +142,7 @@ public class CrosshairOverlayFXDemo1 extends Application {
      * @param stage  the stage.
      * @throws Exception if something goes wrong.
      */
+    @Override
     public void start(Stage stage) throws Exception {
         stage.setScene(new Scene(new MyDemoPane())); 
         stage.setTitle("JFreeChart: CrosshairOverlayFXDemo1.java"); 
