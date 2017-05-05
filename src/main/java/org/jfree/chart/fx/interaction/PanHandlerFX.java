@@ -127,6 +127,7 @@ public class PanHandlerFX extends AbstractMouseHandlerFX {
      * @param canvas  the JavaFX canvas ({@code null} not permitted).
      * @param e  the mouse event ({@code null} not permitted).
      */
+    @Override
     public void handleMouseDragged(ChartCanvas canvas, MouseEvent e) {
         if (this.panLast == null) {
             //handle panning if we have a start point else unregister
@@ -158,6 +159,7 @@ public class PanHandlerFX extends AbstractMouseHandlerFX {
         chart.getPlot().setNotify(old);
     }
 
+    @Override
     public void handleMouseReleased(ChartCanvas canvas, MouseEvent e) {  
         //if we have been panning reset the cursor
         //unregister in any case
