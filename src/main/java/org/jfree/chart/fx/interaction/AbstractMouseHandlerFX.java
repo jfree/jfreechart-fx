@@ -58,7 +58,7 @@ import org.jfree.chart.util.ParamChecks;
 public class AbstractMouseHandlerFX implements MouseHandlerFX {
 
     /** The handler id. */
-    private String id;
+    private final String id;
     
     /** 
      * A flag used to enable/disable the handler (usually temporarily, removing
@@ -67,16 +67,16 @@ public class AbstractMouseHandlerFX implements MouseHandlerFX {
     private boolean enabled;
     
     /** Requires ALT key modifier? */
-    private boolean altKey;
+    private final boolean altKey;
     
     /** Requires CTRL key modifier? */
-    private boolean ctrlKey;
+    private final boolean ctrlKey;
 
     /** Requires META key modifier? */
-    private boolean metaKey;
+    private final boolean metaKey;
     
     /** Requires SHIFT key modifier? */
-    private boolean shiftKey;
+    private final boolean shiftKey;
     
     /**
      * Creates a new instance.  The modifier keys are used to select a 
