@@ -127,12 +127,9 @@ public class ChartViewer extends Region {
         getChildren().add(this.zoomRectangle);
         
         this.contextMenu = createContextMenu();
-        setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
-            @Override
-            public void handle(ContextMenuEvent event) {
-                contextMenu.show(ChartViewer.this.getScene().getWindow(), 
-                        event.getScreenX(), event.getScreenY());
-            }
+        setOnContextMenuRequested((ContextMenuEvent event) -> {
+            contextMenu.show(ChartViewer.this.getScene().getWindow(),
+                    event.getScreenX(), event.getScreenY());
         });
         getContextMenu().setOnShowing(
                 e -> ChartViewer.this.getCanvas().setTooltipEnabled(false));
