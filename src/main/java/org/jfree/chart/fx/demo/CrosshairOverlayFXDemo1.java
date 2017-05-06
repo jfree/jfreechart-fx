@@ -51,7 +51,7 @@ import org.jfree.chart.fx.overlay.CrosshairOverlayFX;
 import org.jfree.chart.plot.Crosshair;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.ui.RectangleEdge;
-import org.jfree.data.general.DatasetUtilities;
+import org.jfree.data.general.DatasetUtils;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
@@ -114,7 +114,7 @@ public class CrosshairOverlayFXDemo1 extends Application {
             if (!xAxis.getRange().contains(x)) { 
                 x = Double.NaN;                  
             }
-            double y = DatasetUtilities.findYValue(plot.getDataset(), 0, x);
+            double y = DatasetUtils.findYValue(plot.getDataset(), 0, x);
             this.xCrosshair.setValue(x);
             this.yCrosshair.setValue(y);
         }
