@@ -43,7 +43,7 @@ package org.jfree.chart.fx.interaction;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import org.jfree.chart.fx.ChartCanvas;
-import org.jfree.chart.util.ParamChecks;
+import org.jfree.chart.util.Args;
 
 /**
  * A base class that can be used to implement the {@link MouseHandlerFX}
@@ -91,7 +91,7 @@ public class AbstractMouseHandlerFX implements MouseHandlerFX {
      */
     public AbstractMouseHandlerFX(String id, boolean altKey, boolean ctrlKey, 
             boolean metaKey, boolean shiftKey) {
-        ParamChecks.nullNotPermitted(id, "id");
+        Args.nullNotPermitted(id, "id");
         this.id = id;
         this.enabled = true;
         this.altKey = altKey;

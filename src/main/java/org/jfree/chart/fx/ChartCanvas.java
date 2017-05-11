@@ -74,7 +74,7 @@ import org.jfree.chart.fx.interaction.PanHandlerFX;
 import org.jfree.chart.fx.interaction.MouseHandlerFX;
 import org.jfree.chart.fx.overlay.OverlayFX;
 import org.jfree.chart.plot.PlotRenderingInfo;
-import org.jfree.chart.util.ParamChecks;
+import org.jfree.chart.util.Args;
 import org.jfree.fx.FXGraphics2D;
 import org.jfree.fx.FXHints;
 
@@ -349,7 +349,7 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * @since 1.0.20
      */
     public void addOverlay(OverlayFX overlay) {
-        ParamChecks.nullNotPermitted(overlay, "overlay");
+        Args.nullNotPermitted(overlay, "overlay");
         this.overlays.add(overlay);
         overlay.addChangeListener(this);
         draw();
@@ -363,7 +363,7 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * @since 1.0.20
      */
     public void removeOverlay(OverlayFX overlay) {
-        ParamChecks.nullNotPermitted(overlay, "overlay");
+        Args.nullNotPermitted(overlay, "overlay");
         boolean removed = this.overlays.remove(overlay);
         if (removed) {
             overlay.removeChangeListener(this);
@@ -401,7 +401,7 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * @param listener  the listener ({@code null} not permitted).
      */
     public void addChartMouseListener(ChartMouseListenerFX listener) {
-        ParamChecks.nullNotPermitted(listener, "listener");
+        Args.nullNotPermitted(listener, "listener");
         this.chartMouseListeners.add(listener);
     }
 
