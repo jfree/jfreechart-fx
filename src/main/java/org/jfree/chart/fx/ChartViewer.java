@@ -44,7 +44,6 @@ package org.jfree.chart.fx;
 
 import java.io.File;
 import java.io.IOException;
-import javafx.event.EventHandler;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
