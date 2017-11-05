@@ -64,20 +64,6 @@
             <version>1.6</version>
         </dependency>
 
-        <!-- JFreeSVG enables SVG export -->
-        <dependency>
-            <groupId>org.jfree</groupId>
-            <artifactId>jfreesvg</artifactId>
-            <version>3.2</version>
-        </dependency>
-        
-        <!-- OrsonPDF enables PDF export -->
-        <dependency>
-            <groupId>com.orsonpdf</groupId>
-            <artifactId>orsonpdf</artifactId>
-            <version>1.7</version>
-        </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
