@@ -347,7 +347,7 @@ public class ChartViewer extends Region {
     /**
      * Sets the size and location of the zoom rectangle and makes it visible
      * if it wasn't already visible..  This method is provided for the use of 
-     * the {@link ZoomHandler} class, you won't normally need to call it 
+     * the {@link ZoomHandlerFX} class, you won't normally need to call it 
      * directly.
      * 
      * @param x  the x-location.
@@ -365,7 +365,7 @@ public class ChartViewer extends Region {
     
     /**
      * Hides the zoom rectangle.  This method is provided for the use of the
-     * {@link ZoomHandler} class, you won't normally need to call it directly.
+     * {@link ZoomHandlerFX} class, you won't normally need to call it directly.
      */
     public void hideZoomRectangle() {
         this.zoomRectangle.setVisible(false);
