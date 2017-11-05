@@ -1,7 +1,7 @@
 JFreeChart-FX
 =============
 
-Version 1.0.0, not yet released.
+Version 1.0.0, 5 November 2017.
 
 Overview
 --------
