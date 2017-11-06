@@ -3,10 +3,14 @@ JFreeChart-FX
 
 Version 1.0.0, 5 November 2017.
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.jfree/jfreechart-fx/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.jfree/jfreechart-fx)
+
 Overview
 --------
 JFreeChart-FX is an extension for [JFreeChart](https://github.com/jfree/jfreechart "JFreeChart Project Page at GitHub") 
 that allows JFreeChart to be used in JavaFX applications.  
+
+![JFreeChart sample](http://jfree.org/jfreechart/images/coffee_prices.png)
 
 
 Include
