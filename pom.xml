@@ -7,6 +7,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <name>JFreeChart-FX</name>
+    <description>
+        JFreeChart-FX is an extension for JFreeChart that provides JavaFX support.
+    </description>
+    <url>http://www.jfree.org/jfreechart/</url>
 
     <artifactId>jfreechart-fx</artifactId>
     <groupId>org.jfree</groupId>
@@ -18,20 +22,6 @@
         <url>http://www.jfree.org/</url>
     </organization>
     <inceptionYear>2017</inceptionYear>
-
-    <description>
-        JFreeChart-FX is an extension for JFreeChart that provides JavaFX support.
-    </description>
-
-    <url>http://www.jfree.org/jfreechart/</url>
-    <issueManagement>
-        <url>https://github.com/jfree/jfreechart-fx/issues</url>
-        <system>GitHub Issues</system>
-    </issueManagement>
-    <scm>
-        <connection>scm:git:git:https://github.com/jfree/jfreechart-fx.git</connection>
-        <url>https://github.com/jfree/jfreechart-fx</url>
-    </scm>
 
     <developers>
       <developer>
@@ -49,6 +39,15 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
+    <issueManagement>
+        <url>https://github.com/jfree/jfreechart-fx/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+    <scm>
+        <connection>scm:git:git:https://github.com/jfree/jfreechart-fx.git</connection>
+        <url>https://github.com/jfree/jfreechart-fx</url>
+    </scm>
 
     <dependencies>
         <dependency>
@@ -70,7 +69,6 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <distributionManagement>
@@ -81,9 +79,7 @@
     </distributionManagement>    
     
     <build>
-
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
