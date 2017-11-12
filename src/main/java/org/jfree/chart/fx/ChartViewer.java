@@ -130,9 +130,9 @@ public class ChartViewer extends Region {
             contextMenu.show(ChartViewer.this.getScene().getWindow(),
                     event.getScreenX(), event.getScreenY());
         });
-        getContextMenu().setOnShowing(
+        this.contextMenu.setOnShowing(
                 e -> ChartViewer.this.getCanvas().setTooltipEnabled(false));
-        getContextMenu().setOnHiding(
+        this.contextMenu.setOnHiding(
                 e -> ChartViewer.this.getCanvas().setTooltipEnabled(true));
     }
 
