@@ -211,8 +211,8 @@ public class ChartViewer extends Region {
     @Override
     protected void layoutChildren() {
         super.layoutChildren();
-        this.canvas.setLayoutX(getLayoutX());
-        this.canvas.setLayoutY(getLayoutY());
+        this.canvas.setLayoutX(0);
+        this.canvas.setLayoutY(0);
         this.canvas.setWidth(getWidth());
         this.canvas.setHeight(getHeight());
     }
