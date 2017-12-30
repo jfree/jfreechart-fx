@@ -41,7 +41,8 @@ History
 
 ##### Version 1.0.1 (30 December 2017)
 
-- fixed a bug in `ChartCanvas` (#3). 
+- fixed a bug in `ChartCanvas` ([#3](https://github.com/jfree/jfreechart-fx/issues/3));
+- added source files to Javadoc output.
 
 ##### Version 1.0.0 (5 November 2017)
 
