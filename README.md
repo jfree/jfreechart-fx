@@ -1,7 +1,7 @@
 JFreeChart-FX
 =============
 
-Version 1.0.0, 5 November 2017.
+Version 1.0.1, 30 December 2017.
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.jfree/jfreechart-fx/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.jfree/jfreechart-fx)
 
@@ -17,11 +17,10 @@ Include
 -------
 To include JFreeChart-FX in your application:
 
-    <!-- https://mvnrepository.com/artifact/org.jfree/jfreechart-fx -->
     <dependency>
         <groupId>org.jfree</groupId>
         <artifactId>jfreechart-fx</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </dependency>
 
 JFreeChart-FX has dependencies on:
@@ -35,3 +34,15 @@ Demo Programs
 There are demo programs for this API provided in the following project:
 
 https://github.com/jfree/jfree-fxdemos
+
+
+History
+-------
+
+##### Version 1.0.1 (30 December 2017)
+
+- fixed a bug in `ChartCanvas` (#3). 
+
+##### Version 1.0.0 (5 November 2017)
+
+Initial release after extracting the JavaFX code from the JFreeChart project.
