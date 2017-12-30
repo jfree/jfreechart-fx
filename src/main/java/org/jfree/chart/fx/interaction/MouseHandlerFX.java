@@ -27,14 +27,10 @@
  * -------------------
  * MouseHandlerFX.java
  * -------------------
- * (C) Copyright 2014, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2014, 2017 by Object Refinery Limited and Contributors.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
- *
- * Changes:
- * --------
- * 25-Jun-2014 : Version 1 (DG);
  *
  */
 
@@ -58,12 +54,7 @@ import org.jfree.chart.fx.ChartCanvas;
  * The auxiliary handlers are always called to respond to mouse events, but
  * after the live handler has dealt with the event first.  Auxiliary handlers
  * should not perform tasks that could interfere with the live handler.
- * 
- * <p>THE API FOR THIS CLASS IS SUBJECT TO CHANGE IN FUTURE RELEASES.  This is
- * so that we can incorporate feedback on the (new) JavaFX support in 
- * JFreeChart.</p>
- * 
- * @since 1.0.18
+ *
  */
 public interface MouseHandlerFX {
 

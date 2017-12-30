@@ -32,10 +32,6 @@
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
  *
- * Changes:
- * --------
- * 20-Feb-2016 : Version 1 (DG);
- *
  */
 
 package org.jfree.chart.fx.overlay;
@@ -56,8 +52,6 @@ import org.jfree.chart.ui.RectangleEdge;
 
 /**
  * An overlay for a {@link ChartViewer} that draws crosshairs on a plot.
- *
- * @since 1.0.20
  */
 public class CrosshairOverlayFX extends CrosshairOverlay implements OverlayFX {
 

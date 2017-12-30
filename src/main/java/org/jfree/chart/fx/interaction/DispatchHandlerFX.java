@@ -32,11 +32,6 @@
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
  *
- * Changes:
- * --------
- * 25-Jun-2014 : Version 1 (DG);
- * 18-Feb-2017 : Pull dispatch code from ChartCanvas (DG);
- *
  */
 
 package org.jfree.chart.fx.interaction;
@@ -52,12 +47,6 @@ import org.jfree.chart.fx.ChartViewer;
  * dispatching {@link ChartMouseEventFX} events to listeners that are 
  * registered with the {@code ChartCanvas} (listeners can also be registered
  * with a {@link ChartViewer} control).
- * 
- * <p>THE API FOR THIS CLASS IS SUBJECT TO CHANGE IN FUTURE RELEASES.  This is
- * so that we can incorporate feedback on the (new) JavaFX support in 
- * JFreeChart.</p>
- * 
- * @since 1.0.18
  */
 public class DispatchHandlerFX extends AbstractMouseHandlerFX {
     

@@ -32,10 +32,6 @@
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
  *
- * Changes:
- * --------
- * 25-Jun-2014 : Version 1 (DG);
- *
  */
 
 package org.jfree.chart.fx.interaction;
@@ -48,12 +44,6 @@ import org.jfree.chart.util.Args;
 /**
  * A base class that can be used to implement the {@link MouseHandlerFX}
  * interface.
- * 
- * <p>THE API FOR THIS CLASS IS SUBJECT TO CHANGE IN FUTURE RELEASES.  This is
- * so that we can incorporate feedback on the (new) JavaFX support in 
- * JFreeChart.</p>
- * 
- * @since 1.0.18
  */
 public class AbstractMouseHandlerFX implements MouseHandlerFX {
 

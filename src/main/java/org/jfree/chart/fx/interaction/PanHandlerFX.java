@@ -27,14 +27,10 @@
  * -----------------
  * PanHandlerFX.java
  * -----------------
- * (C) Copyright 2014, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2014, 2017 by Object Refinery Limited and Contributors.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
- *
- * Changes:
- * --------
- * 25-Jun-2014 : Version 1 (DG);
  *
  */
 
@@ -53,12 +49,6 @@ import org.jfree.chart.plot.PlotRenderingInfo;
  * Handles panning of charts on a {@link ChartCanvas}.  This handler
  * should be configured with the required modifier keys and installed as a
  * live handler (not an auxiliary handler).
- * 
- * <p>THE API FOR THIS CLASS IS SUBJECT TO CHANGE IN FUTURE RELEASES.  This is
- * so that we can incorporate feedback on the (new) JavaFX support in 
- * JFreeChart.</p>
- * 
- * @since 1.0.18
  */
 public class PanHandlerFX extends AbstractMouseHandlerFX {
 

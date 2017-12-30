@@ -32,13 +32,6 @@
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
  *
- * Changes:
- * --------
- * 25-Jun-2014 : Version 1 (DG);
- * 19-Jul-2014 : Add clearRect() call for each draw (DG);
- * 18-Feb-2017 : Add methods for auxiliary handlers, move dispatch handling
- *               methods to DispatchHandlerFX (DG);
- *
  */
 
 package org.jfree.chart.fx;
@@ -93,12 +86,7 @@ import org.jfree.fx.FXHints;
  * set to {@code FontSmoothingType.LCD} as this gives better results on the 
  * systems we've tested on.  You can modify this using 
  * {@code getGraphicsContext().setFontSmoothingType(yourValue)}.</p>
- * 
- * <p>THE API FOR THIS CLASS IS SUBJECT TO CHANGE IN FUTURE RELEASES.  This is
- * so that we can incorporate feedback on the (new) JavaFX support in 
- * JFreeChart.</p>
- * 
- * @since 1.0.18
+ *
  */
 public class ChartCanvas extends Canvas implements ChartChangeListener,
         OverlayChangeListener {
@@ -239,8 +227,6 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * the domain axis.
      *
      * @return A boolean.
-     * 
-     * @since 1.0.20
      */
     public boolean isDomainZoomable() {
         return this.domainZoomable;
@@ -252,8 +238,6 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * then setting this flag to {@code true} will have no effect.
      * 
      * @param zoomable  the new flag value.
-     * 
-     * @since 1.0.20
      */
     public void setDomainZoomable(boolean zoomable) {
         this.domainZoomable = zoomable;
@@ -264,8 +248,6 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * the range axis.
      *
      * @return A boolean.
-     * 
-     * @since 1.0.20
      */
     public boolean isRangeZoomable() {
         return this.rangeZoomable;
@@ -277,8 +259,6 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * then setting this flag to {@code true} will have no effect.
      * 
      * @param zoomable  the new flag value.
-     * 
-     * @since 1.0.20
      */
     public void setRangeZoomable(boolean zoomable) {
         this.rangeZoomable = zoomable;
@@ -320,8 +300,6 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * rendering to determine the position of crosshairs (if visible).
      * 
      * @return The anchor point (possibly {@code null}).
-     * 
-     * @since 1.0.20
      */
     public Point2D getAnchor() {
         return this.anchor;        
@@ -345,8 +323,6 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * Add an overlay to the canvas.
      *
      * @param overlay  the overlay ({@code null} not permitted).
-     *
-     * @since 1.0.20
      */
     public void addOverlay(OverlayFX overlay) {
         Args.nullNotPermitted(overlay, "overlay");
@@ -359,8 +335,6 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * Removes an overlay from the canvas.
      *
      * @param overlay  the overlay to remove ({@code null} not permitted).
-     *
-     * @since 1.0.20
      */
     public void removeOverlay(OverlayFX overlay) {
         Args.nullNotPermitted(overlay, "overlay");
@@ -375,8 +349,6 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * Handles a change to an overlay by repainting the chart canvas.
      *
      * @param event  the event.
-     *
-     * @since 1.0.20
      */
     @Override
     public void overlayChanged(OverlayChangeEvent event) {
@@ -388,8 +360,6 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * registered with the canvas.
      * 
      * @return A list of listeners (possibly empty but never {@code null}).
-     * 
-     * @since 1.0.20
      */
     public List<ChartMouseListenerFX> getChartMouseListeners() {
         return new ArrayList<>(this.chartMouseListeners);
@@ -470,8 +440,6 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * with this canvas.
      * 
      * @param handler  the handler ({@code null} not permitted).
-     * 
-     * @since 1.0.20
      */
     public void addAuxiliaryMouseHandler(MouseHandlerFX handler) {
         if (!hasUniqueID(handler)) {
@@ -485,9 +453,7 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
     /**
      * Removes a handler from the list of auxiliary handlers.
      * 
-     * @param handler  the handler ({@code null} not permitted). 
-     * 
-     * @since 1.0.20
+     * @param handler  the handler ({@code null} not permitted).
      */
     public void removeAuxiliaryMouseHandler(MouseHandlerFX handler) {
         this.auxiliaryMouseHandlers.remove(handler);

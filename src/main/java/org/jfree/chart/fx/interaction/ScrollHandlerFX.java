@@ -27,14 +27,10 @@
  * --------------------
  * ScrollHandlerFX.java
  * --------------------
- * (C) Copyright 2014-2016, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2014-2017, by Object Refinery Limited and Contributors.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
- *
- * Changes:
- * --------
- * 25-Jun-2014 : Version 1 (DG);
  *
  */
 
@@ -52,12 +48,6 @@ import org.jfree.chart.plot.Zoomable;
 
 /**
  * Handles scroll events (mouse wheel etc) on a {@link ChartCanvas}.
- * 
- * <p>THE API FOR THIS CLASS IS SUBJECT TO CHANGE IN FUTURE RELEASES.  This is
- * so that we can incorporate feedback on the (new) JavaFX support in 
- * JFreeChart.</p>
- * 
- * @since 1.0.18
  */
 public class ScrollHandlerFX extends AbstractMouseHandlerFX 
         implements MouseHandlerFX {

@@ -32,10 +32,6 @@
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
  *
- * Changes:
- * --------
- * 25-Jun-2014 : Version 1 (DG);
- *
  */
 
 package org.jfree.chart.fx.interaction;
@@ -47,12 +43,6 @@ import org.jfree.chart.fx.ChartViewer;
  * A mouse listener that can receive event notifications from a (JavaFX) 
  * {@link ChartViewer} instance.  This interface is equivalent to the 
  * {@link ChartMouseListener} interface used for charts in Swing.
- * 
- * <p>THE API FOR THIS CLASS IS SUBJECT TO CHANGE IN FUTURE RELEASES.  This is
- * so that we can incorporate feedback on the (new) JavaFX support in 
- * JFreeChart.</p>
- * 
- * @since 1.0.18
  */
 public interface ChartMouseListenerFX {
     

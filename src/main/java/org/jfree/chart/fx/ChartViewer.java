@@ -32,12 +32,6 @@
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
  *
- * Changes:
- * --------
- * 27-Jun-2014 : Version 1 (DG);
- * 18-Feb-2017 : Change base class from Control to Region. ChartViewerSkin.java
- *               is deleted, code from that class is now included here (DG);
- *
  */
 
 package org.jfree.chart.fx;
@@ -66,12 +60,6 @@ import org.jfree.chart.util.Args;
  * {@link ChartCanvas}, adds drag zooming and provides a popup menu for export
  * to PNG/JPG/SVG and PDF formats).  Many behaviours (tooltips, zooming etc) are 
  * provided directly by the canvas.
- * 
- * <p>THE API FOR THIS CLASS IS SUBJECT TO CHANGE IN FUTURE RELEASES.  This is
- * so that we can incorporate feedback on the (new) JavaFX support in 
- * JFreeChart.</p>
- * 
- * @since 1.0.18
  */
 public class ChartViewer extends Region {
 
@@ -91,8 +79,6 @@ public class ChartViewer extends Region {
      * Creates a new instance, initially with no chart to display.  This 
      * constructor is required so that this control can be used within
      * FXML.
-     * 
-     * @since 1.0.20
      */
     public ChartViewer() {
         this(null);
@@ -158,9 +144,7 @@ public class ChartViewer extends Region {
     /**
      * Returns the {@link ChartCanvas} embedded in this component.
      * 
-     * @return The {@code ChartCanvas} (never {@code null}). 
-     * 
-     * @since 1.0.20
+     * @return The {@code ChartCanvas} (never {@code null}).
      */
     public ChartCanvas getCanvas() {
         return this.canvas;
@@ -179,8 +163,6 @@ public class ChartViewer extends Region {
      * Returns the rendering info from the most recent drawing of the chart.
      * 
      * @return The rendering info (possibly {@code null}).
-     * 
-     * @since 1.0.19
      */
     public ChartRenderingInfo getRenderingInfo() {
         return getCanvas().getRenderingInfo();
@@ -190,8 +172,6 @@ public class ChartViewer extends Region {
      * Returns the current fill paint for the zoom rectangle.
      * 
      * @return The fill paint.
-     * 
-     * @since 1.0.20
      */
     public Paint getZoomFillPaint() {
         return this.zoomRectangle.getFill();
@@ -201,8 +181,6 @@ public class ChartViewer extends Region {
      * Sets the fill paint for the zoom rectangle.
      * 
      * @param paint  the new paint.
-     * 
-     * @since 1.0.20
      */
     public void setZoomFillPaint(Paint paint) {
         this.zoomRectangle.setFill(paint);

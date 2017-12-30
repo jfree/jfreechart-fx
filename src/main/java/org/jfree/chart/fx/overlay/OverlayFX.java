@@ -27,14 +27,10 @@
  * --------------
  * OverlayFX.java
  * --------------
- * (C) Copyright 2016, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2016, 2017, by Object Refinery Limited and Contributors.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
- *
- * Changes:
- * --------
- * 20-Feb-2016 : Version 1 (DG);
  *
  */
 
@@ -46,8 +42,6 @@ import org.jfree.chart.panel.Overlay;
 
 /**
  * An overlay that can be added to a {@link ChartCanvas}.
- * 
- * @since 1.0.20
  */
 public interface OverlayFX extends Overlay {
 

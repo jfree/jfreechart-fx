@@ -32,10 +32,6 @@
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
  *
- * Changes:
- * --------
- * 25-Jun-2014 : Version 1 (DG);
- *
  */
 
 package org.jfree.chart.fx.interaction;
@@ -56,12 +52,6 @@ import org.jfree.chart.util.ShapeUtils;
  * as a live handler (not an auxiliary handler).  This handler only works for
  * a <b>ChartCanvas</b> that is embedded in a {@link ChartViewer}, since it 
  * relies on the <b>ChartViewer</b> for drawing the zoom rectangle.
- * 
- * <p>THE API FOR THIS CLASS IS SUBJECT TO CHANGE IN FUTURE RELEASES.  This is
- * so that we can incorporate feedback on the (new) JavaFX support in 
- * JFreeChart.</p>
- * 
- * @since 1.0.18
  */
 public class ZoomHandlerFX extends AbstractMouseHandlerFX {
 
