@@ -2,7 +2,7 @@
  * JFreeChart-FX : JavaFX extensions for JFreeChart
  * ================================================
  *
- * (C) Copyright 2017, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2017, 2018 by Object Refinery Limited and Contributors.
  *
  * Project Info:  https://github.com/jfree/jfreechart-fx
  *
@@ -27,7 +27,7 @@
  * ----------------
  * ChartViewer.java
  * ----------------
- * (C) Copyright 2014-2017, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2014-2018, by Object Refinery Limited and Contributors.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
@@ -256,7 +256,7 @@ public class ChartViewer extends Region {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Export to PDF");
         FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter(
-                "Portable Document Format (PDF)", "pdf");
+                "Portable Document Format (PDF)", "*.pdf");
         chooser.getExtensionFilters().add(filter);
         File file = chooser.showSaveDialog(getScene().getWindow());
         if (file != null) {
@@ -272,7 +272,7 @@ public class ChartViewer extends Region {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Export to SVG");
         FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter(
-                "Scalable Vector Graphics (SVG)", "svg");
+                "Scalable Vector Graphics (SVG)", "*.svg");
         chooser.getExtensionFilters().add(filter);
         File file = chooser.showSaveDialog(getScene().getWindow());
         if (file != null) {
@@ -288,7 +288,7 @@ public class ChartViewer extends Region {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Export to PNG");
         FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter(
-                "Portable Network Graphics (PNG)", "png");
+                "Portable Network Graphics (PNG)", "*.png");
         chooser.getExtensionFilters().add(filter);
         File file = chooser.showSaveDialog(getScene().getWindow());
         if (file != null) {
@@ -308,7 +308,7 @@ public class ChartViewer extends Region {
     private void handleExportToJPEG() {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Export to JPEG");
-        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("JPEG", "jpg");
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("JPEG", "*.jpg");
         chooser.getExtensionFilters().add(filter);
         File file = chooser.showSaveDialog(getScene().getWindow());
         if (file != null) {
