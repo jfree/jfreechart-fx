@@ -39,6 +39,10 @@ https://github.com/jfree/jfree-fxdemos
 History
 -------
 
+##### Version 1.0.2 (not yet released)
+
+- fixed a bug in `ChartViewer` ([#7](https://github.com/jfree/jfreechart-fx/issues/7));
+
 ##### Version 1.0.1 (30 December 2017)
 
 - fixed a bug in `ChartCanvas` ([#3](https://github.com/jfree/jfreechart-fx/issues/3));
