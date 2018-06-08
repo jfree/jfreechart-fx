@@ -2,7 +2,7 @@
  * JFreeChart-FX : JavaFX extensions for JFreeChart
  * ================================================
  *
- * (C) Copyright 2017, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2017, 2018, by Object Refinery Limited and Contributors.
  *
  * Project Info:  https://github.com/jfree/jfreechart-fx
  *
@@ -27,7 +27,7 @@
  * ------------------
  * ZoomHandlerFX.java
  * ------------------
- * (C) Copyright 2014, 2017, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2014-2018, by Object Refinery Limited and Contributors.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
@@ -221,24 +221,24 @@ public class ZoomHandlerFX extends AbstractMouseHandlerFX {
                     h = Math.min(h, maxY - this.startPoint.getY());
                 }
                 Rectangle2D zoomArea = new Rectangle2D.Double(x, y, w, h);
-                
-                boolean saved = p.isNotify();
-                p.setNotify(false);
-                double pw0 = percentW(x, dataArea);
-                double pw1 = percentW(x + w, dataArea);
-                double ph0 = percentH(y, dataArea);
-                double ph1 = percentH(y + h, dataArea);
-                PlotRenderingInfo info 
-                        = this.viewer.getRenderingInfo().getPlotInfo();
-                if (z.getOrientation().isVertical()) {
-                    z.zoomDomainAxes(pw0, pw1, info, endPoint);
-                    z.zoomRangeAxes(1 - ph1, 1 - ph0, info, endPoint);
-                } else {
-                    z.zoomRangeAxes(pw0, pw1, info, endPoint);
-                    z.zoomDomainAxes(1 - ph1, 1 - ph0, info, endPoint);
+                if (!zoomArea.isEmpty()) {        
+                    boolean saved = p.isNotify();
+                    p.setNotify(false);
+                    double pw0 = percentW(x, dataArea);
+                    double pw1 = percentW(x + w, dataArea);
+                    double ph0 = percentH(y, dataArea);
+                    double ph1 = percentH(y + h, dataArea);
+                    PlotRenderingInfo info 
+                            = this.viewer.getRenderingInfo().getPlotInfo();
+                    if (z.getOrientation().isVertical()) {
+                        z.zoomDomainAxes(pw0, pw1, info, endPoint);
+                        z.zoomRangeAxes(1 - ph1, 1 - ph0, info, endPoint);
+                    } else {
+                        z.zoomRangeAxes(pw0, pw1, info, endPoint);
+                        z.zoomDomainAxes(1 - ph1, 1 - ph0, info, endPoint);
+                    }
+                    p.setNotify(saved);
                 }
-                p.setNotify(saved);
-                
             }
         }
         this.viewer.hideZoomRectangle();
