@@ -2,7 +2,7 @@
  * JFreeChart-FX : JavaFX extensions for JFreeChart
  * ================================================
  *
- * (C) Copyright 2017, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2017-2019, by Object Refinery Limited and Contributors.
  *
  * Project Info:  https://github.com/jfree/jfreechart-fx
  *
@@ -27,7 +27,7 @@
  * ---------------------
  * TooltipHandlerFX.java
  * ---------------------
- * (C) Copyright 2014, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2014-2019, by Object Refinery Limited and Contributors.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
@@ -65,7 +65,7 @@ public class TooltipHandlerFX extends AbstractMouseHandlerFX
      */
     @Override
     public void handleMouseMoved(ChartCanvas canvas, MouseEvent e) {
-        if (!canvas.isTooltipEnabled()) {
+        if (canvas.getChart() == null || !canvas.isTooltipEnabled()) {
             return;
         }
         String text = getTooltipText(canvas, e.getX(), e.getY());

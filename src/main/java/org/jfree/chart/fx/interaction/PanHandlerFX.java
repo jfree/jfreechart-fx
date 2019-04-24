@@ -2,7 +2,7 @@
  * JFreeChart-FX : JavaFX extensions for JFreeChart
  * ================================================
  *
- * (C) Copyright 2017, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2017-2019, by Object Refinery Limited and Contributors.
  *
  * Project Info:  https://github.com/jfree/jfreechart-fx
  *
@@ -27,7 +27,7 @@
  * -----------------
  * PanHandlerFX.java
  * -----------------
- * (C) Copyright 2014, 2017 by Object Refinery Limited and Contributors.
+ * (C) Copyright 2014-2019 by Object Refinery Limited and Contributors.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
@@ -91,6 +91,9 @@ public class PanHandlerFX extends AbstractMouseHandlerFX {
      */
     @Override
     public void handleMousePressed(ChartCanvas canvas, MouseEvent e) {
+    	if (canvas.getChart() == null) {
+    		return;
+    	}
         Plot plot = canvas.getChart().getPlot();
         if (!(plot instanceof Pannable)) {
             canvas.clearLiveHandler();
@@ -126,6 +129,9 @@ public class PanHandlerFX extends AbstractMouseHandlerFX {
         }
 
         JFreeChart chart = canvas.getChart();
+        if (chart == null) {
+            return;
+        }
         double dx = e.getX() - this.panLast.getX();
         double dy = e.getY() - this.panLast.getY();
         if (dx == 0.0 && dy == 0.0) {

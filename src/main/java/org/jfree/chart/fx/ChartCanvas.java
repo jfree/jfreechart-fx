@@ -2,7 +2,7 @@
  * JFreeChart-FX : JavaFX extensions for JFreeChart
  * ================================================
  *
- * (C) Copyright 2017, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2017-2019, by Object Refinery Limited and Contributors.
  *
  * Project Info:  https://github.com/jfree/jfreechart-fx
  *
@@ -27,7 +27,7 @@
  * ----------------
  * ChartCanvas.java
  * ----------------
- * (C) Copyright 2014-2017, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2014-2019, by Object Refinery Limited and Contributors.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
@@ -150,7 +150,7 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * Creates a new canvas to display the supplied chart in JavaFX.  If
      * {@code chart} is {@code null}, a blank canvas will be displayed.
      * 
-     * @param chart  the chart. 
+     * @param chart  the chart ({@code null} permitted). 
      */
     public ChartCanvas(JFreeChart chart) {
         this.chart = chart;

@@ -2,7 +2,7 @@
  * JFreeChart-FX : JavaFX extensions for JFreeChart
  * ================================================
  *
- * (C) Copyright 2017, 2018, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2017-2019, by Object Refinery Limited and Contributors.
  *
  * Project Info:  https://github.com/jfree/jfreechart-fx
  *
@@ -27,7 +27,7 @@
  * ------------------
  * ZoomHandlerFX.java
  * ------------------
- * (C) Copyright 2014-2018, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2014-2019, by Object Refinery Limited and Contributors.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
@@ -97,6 +97,9 @@ public class ZoomHandlerFX extends AbstractMouseHandlerFX {
      */
     @Override
     public void handleMousePressed(ChartCanvas canvas, MouseEvent e) {
+    	if (canvas.getChart() == null) {
+    		return;
+    	}
         Point2D pt = new Point2D.Double(e.getX(), e.getY());
         Rectangle2D dataArea = canvas.findDataArea(pt);
         if (dataArea != null) {
@@ -122,6 +125,9 @@ public class ZoomHandlerFX extends AbstractMouseHandlerFX {
             //as life handler unregister
             canvas.clearLiveHandler();
             return;
+        }
+        if (canvas.getChart() == null) {
+        	return;
         }
 
         boolean hZoom, vZoom;
@@ -166,7 +172,10 @@ public class ZoomHandlerFX extends AbstractMouseHandlerFX {
     }
 
     @Override
-    public void handleMouseReleased(ChartCanvas canvas, MouseEvent e) {  
+    public void handleMouseReleased(ChartCanvas canvas, MouseEvent e) {
+    	if (canvas.getChart() == null) {
+    		return;
+    	}
         Plot p = canvas.getChart().getPlot();
         if (!(p instanceof Zoomable)) {
             return;

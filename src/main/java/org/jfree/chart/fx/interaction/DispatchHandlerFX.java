@@ -2,7 +2,7 @@
  * JFreeChart-FX : JavaFX extensions for JFreeChart
  * ================================================
  *
- * (C) Copyright 2017, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2017-2019, by Object Refinery Limited and Contributors.
  *
  * Project Info:  https://github.com/jfree/jfreechart-fx
  *
@@ -27,7 +27,7 @@
  * ----------------------
  * DispatchHandlerFX.java
  * ----------------------
- * (C) Copyright 2014, 2017 by Object Refinery Limited and Contributors.
+ * (C) Copyright 2014-2019 by Object Refinery Limited and Contributors.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
@@ -75,8 +75,18 @@ public class DispatchHandlerFX extends AbstractMouseHandlerFX {
         this.mousePressedPoint = new Point2D.Double(e.getX(), e.getY());
     }
 
+    /**
+     * Handles a mouse moved event by passing on an event to all registered 
+     * listeners.
+     * 
+     * @param canvas  the chart canvas ({@code null} not permitted).
+     * @param e  the mouse event.
+     */
     @Override
     public void handleMouseMoved(ChartCanvas canvas, MouseEvent e) {
+    	if (canvas.getChart() == null) {
+    		return; // do nothing
+    	}
         double x = e.getX();
         double y = e.getY();
         ChartEntity entity = canvas.getRenderingInfo().getEntityCollection().getEntity(x, y);
@@ -96,7 +106,7 @@ public class DispatchHandlerFX extends AbstractMouseHandlerFX {
      */
     @Override
     public void handleMouseClicked(ChartCanvas canvas, MouseEvent e) {
-        if (this.mousePressedPoint == null) {
+        if (this.mousePressedPoint == null || canvas.getChart() == null) {
             return;
         }
         double x = e.getX();

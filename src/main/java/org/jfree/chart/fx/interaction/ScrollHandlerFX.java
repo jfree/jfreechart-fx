@@ -2,7 +2,7 @@
  * JFreeChart-FX : JavaFX extensions for JFreeChart
  * ================================================
  *
- * (C) Copyright 2017, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2017-2019, by Object Refinery Limited and Contributors.
  *
  * Project Info:  https://github.com/jfree/jfreechart-fx
  *
@@ -27,7 +27,7 @@
  * --------------------
  * ScrollHandlerFX.java
  * --------------------
- * (C) Copyright 2014-2017, by Object Refinery Limited and Contributors.
+ * (C) Copyright 2014-2019, by Object Refinery Limited and Contributors.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   -;
@@ -87,6 +87,9 @@ public class ScrollHandlerFX extends AbstractMouseHandlerFX
     @Override
     public void handleScroll(ChartCanvas canvas, ScrollEvent e) {
         JFreeChart chart = canvas.getChart();
+        if (chart == null) {
+            return;
+        }
         Plot plot = chart.getPlot();
         if (plot instanceof Zoomable) {
             Zoomable zoomable = (Zoomable) plot;
@@ -101,11 +104,15 @@ public class ScrollHandlerFX extends AbstractMouseHandlerFX
     /**
      * Handle the case where a plot implements the {@link Zoomable} interface.
      *
+     * @param canvas  the chart canvas.
      * @param zoomable  the zoomable plot.
      * @param e  the mouse wheel event.
      */
     private void handleZoomable(ChartCanvas canvas, Zoomable zoomable, 
             ScrollEvent e) {
+    	if (canvas.getChart() == null) {
+    	    return;
+    	}
         // don't zoom unless the mouse pointer is in the plot's data area
         ChartRenderingInfo info = canvas.getRenderingInfo();
         PlotRenderingInfo pinfo = info.getPlotInfo();
