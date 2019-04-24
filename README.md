@@ -43,7 +43,8 @@ History
 
 - fixed a bug in `ChartViewer` ([#7](https://github.com/jfree/jfreechart-fx/issues/7));
 - fixed a bug in `ZoomHandler` ([#8](https://github.com/jfree/jfreechart-fx/issues/8));
-- updated `FXGraphics2D` to version 1.7.
+- fix a bug related to a `ChartCanvas` having a `null` chart ([#12](https://github.com/jfree/jfreechart-fx/issues/8));
+- updated `FXGraphics2D` to version 1.8.
 
 ##### Version 1.0.1 (30 December 2017)
 
