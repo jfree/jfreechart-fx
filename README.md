@@ -1,9 +1,9 @@
 JFreeChart-FX
 =============
 
-Version 1.0.1, 30 December 2017.
+Version 2.0, 30 October 2020.
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.jfree/jfreechart-fx/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.jfree/jfreechart-fx)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.jfree/jfreechart-fx/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.jfree/org.jfree.chart.fx)
 
 Overview
 --------
@@ -19,14 +19,14 @@ To include JFreeChart-FX in your application:
 
     <dependency>
         <groupId>org.jfree</groupId>
-        <artifactId>jfreechart-fx</artifactId>
-        <version>1.0.1</version>
+        <artifactId>org.jfree.chart.fx</artifactId>
+        <version>2.0</version>
     </dependency>
 
 JFreeChart-FX has dependencies on:
 
-* JFreeChart 1.5.0
-* FXGraphics2D 1.6
+* JFreeChart 1.5.1
+* FXGraphics2D 2.1
 
 
 Demo Programs
@@ -39,12 +39,14 @@ https://github.com/jfree/jfree-fxdemos
 History
 -------
 
-##### Version 1.0.2 (not yet released)
+##### Version 2.0 (30 October 2020)
 
+- created a Java module `org.jfree.chart.fx` (requires Java 11 or later);
 - fixed a bug in `ChartViewer` ([#7](https://github.com/jfree/jfreechart-fx/issues/7));
 - fixed a bug in `ZoomHandler` ([#8](https://github.com/jfree/jfreechart-fx/issues/8));
 - fix a bug related to a `ChartCanvas` having a `null` chart ([#12](https://github.com/jfree/jfreechart-fx/issues/12));
-- updated `FXGraphics2D` to version 1.8.
+- updated 'JFreeChart' dependency to version 1.5.1;
+- updated `FXGraphics2D` dependency to version 2.1.
 
 ##### Version 1.0.1 (30 December 2017)
 
