@@ -1,7 +1,7 @@
 JFreeChart-FX
 =============
 
-Version 2.0, 30 October 2020.
+Version 2.0.1, 21 February 2021.
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.jfree/org.jfree.chart.fx/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.jfree/org.jfree.chart.fx)
 
@@ -25,7 +25,7 @@ To include JFreeChart-FX in your application:
 
 JFreeChart-FX has dependencies on:
 
-* JFreeChart 1.5.1
+* JFreeChart 1.5.3
 * FXGraphics2D 2.1
 
 
@@ -38,6 +38,10 @@ https://github.com/jfree/jfree-fxdemos
 
 History
 -------
+
+##### Version 2.0.1 (21 February 2021)
+
+- update JFreeChart dependency to 1.5.3.
 
 ##### Version 2.0 (30 October 2020)
 
