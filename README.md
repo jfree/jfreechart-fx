@@ -20,7 +20,7 @@ To include JFreeChart-FX in your application:
     <dependency>
         <groupId>org.jfree</groupId>
         <artifactId>org.jfree.chart.fx</artifactId>
-        <version>2.0</version>
+        <version>2.0.1</version>
     </dependency>
 
 JFreeChart-FX has dependencies on:
