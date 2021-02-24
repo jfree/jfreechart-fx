@@ -30,7 +30,11 @@
  * (C) Copyright 2014-2021, by Object Refinery Limited and Contributors.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
- * Contributor(s):   -;
+ * Contributor(s):   Matthias Noebl (for Cropster GmbH);
+ *
+ * Changes
+ * -------
+ * 03-Aug-2018 : Correct zoom direction to be analogous to Swing (MN);
  *
  */
 
@@ -124,7 +128,7 @@ public class ScrollHandlerFX extends AbstractMouseHandlerFX
             plot.setNotify(false);
             int clicks = (int) e.getDeltaY();
             double zf = 1.0 + this.zoomFactor;
-            if (clicks < 0) {
+            if (clicks > 0) {
                 zf = 1.0 / zf;
             }
             if (canvas.isDomainZoomable()) {
