@@ -44,7 +44,6 @@ import org.jfree.chart.fx.ChartViewer;
 import org.jfree.chart.plot.Plot;
 import org.jfree.chart.plot.PlotRenderingInfo;
 import org.jfree.chart.plot.Zoomable;
-import org.jfree.chart.util.ShapeUtils;
 
 /**
  * Handles drag zooming of charts on a {@link ChartCanvas}.  This 
@@ -56,7 +55,7 @@ import org.jfree.chart.util.ShapeUtils;
 public class ZoomHandlerFX extends AbstractMouseHandlerFX {
 
     /** The viewer is used to overlay the zoom rectangle. */
-    private ChartViewer viewer;
+    private final ChartViewer viewer;
     
     /** The starting point for the zoom. */
     private Point2D startPoint;
@@ -103,8 +102,7 @@ public class ZoomHandlerFX extends AbstractMouseHandlerFX {
         Point2D pt = new Point2D.Double(e.getX(), e.getY());
         Rectangle2D dataArea = canvas.findDataArea(pt);
         if (dataArea != null) {
-            this.startPoint = ShapeUtils.getPointInRectangle(e.getX(),
-                    e.getY(), dataArea);
+            this.startPoint = getPointInRectangle(e.getX(), e.getY(), dataArea);
         } else {
             this.startPoint = null;
             canvas.clearLiveHandler();
@@ -261,5 +259,24 @@ public class ZoomHandlerFX extends AbstractMouseHandlerFX {
     
     private double percentH(double y, Rectangle2D r) {
         return (y - r.getMinY()) / r.getHeight();
+    }
+
+    /**
+     * Returns a point based on (x, y) but constrained to be within the bounds
+     * of a given rectangle.
+     *
+     * @param x  the x-coordinate.
+     * @param y  the y-coordinate.
+     * @param area  the constraining rectangle ({@code null} not permitted).
+     *
+     * @return A point within the rectangle.
+     *
+     * @throws NullPointerException if {@code area} is {@code null}.
+     */
+    private static Point2D getPointInRectangle(double x, double y,
+            Rectangle2D area) {
+        x = Math.max(area.getMinX(), Math.min(x, area.getMaxX()));
+        y = Math.max(area.getMinY(), Math.min(y, area.getMaxY()));
+        return new Point2D.Double(x, y);
     }
 }

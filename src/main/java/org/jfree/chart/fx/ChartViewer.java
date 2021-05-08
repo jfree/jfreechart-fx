@@ -47,13 +47,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
-import org.jfree.chart.ChartMouseEvent;
 import org.jfree.chart.ChartRenderingInfo;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.fx.interaction.ChartMouseListenerFX;
 import org.jfree.chart.fx.interaction.ZoomHandlerFX;
+import org.jfree.chart.swing.ChartMouseEvent;
 import org.jfree.chart.util.ExportUtils;
-import org.jfree.chart.util.Args;
 
 /**
  * A control for displaying a {@link JFreeChart} in JavaFX (embeds a 
@@ -63,17 +62,17 @@ import org.jfree.chart.util.Args;
  */
 public class ChartViewer extends Region {
 
-    private ChartCanvas canvas;
+    private final ChartCanvas canvas;
     
     /** 
      * The zoom rectangle is used to display the zooming region when
      * doing a drag-zoom with the mouse.  Most of the time this rectangle
      * is not visible.
      */
-    private Rectangle zoomRectangle;
+    private final Rectangle zoomRectangle;
 
     /** The context menu for the chart viewer. */
-    private ContextMenu contextMenu;
+    private final ContextMenu contextMenu;
     
     /**
      * Creates a new instance, initially with no chart to display.  This 
@@ -137,7 +136,7 @@ public class ChartViewer extends Region {
      * @param chart  the chart ({@code null} not permitted). 
      */
     public void setChart(JFreeChart chart) {
-        Args.nullNotPermitted(chart, "chart");
+        if (chart == null) throw new IllegalArgumentException("chart must not be null");
         this.canvas.setChart(chart);
     }
 
@@ -202,7 +201,7 @@ public class ChartViewer extends Region {
      * @param listener  the listener ({@code null} not permitted).
      */
     public void addChartMouseListener(ChartMouseListenerFX listener) {
-        Args.nullNotPermitted(listener, "listener");
+        if (listener == null) throw new IllegalArgumentException("listener must not be null");
         this.canvas.addChartMouseListener(listener);
     }
 
@@ -213,7 +212,7 @@ public class ChartViewer extends Region {
      * @param listener  the listener.
      */
     public void removeChartMouseListener(ChartMouseListenerFX listener) {
-        Args.nullNotPermitted(listener, "listener");
+        if (listener == null) throw new IllegalArgumentException("listener must not be null");
         this.canvas.removeChartMouseListener(listener);
     }
     

@@ -104,9 +104,9 @@ public class PanHandlerFX extends AbstractMouseHandlerFX {
             Point2D point = new Point2D.Double(e.getX(), e.getY());
             Rectangle2D dataArea = canvas.findDataArea(point);
             if (dataArea != null && dataArea.contains(point)) {
-                this.panW = dataArea.getWidth();
-                this.panH = dataArea.getHeight();
-                this.panLast = point;
+                panW = dataArea.getWidth();
+                panH = dataArea.getHeight();
+                panLast = point;
                 canvas.setCursor(javafx.scene.Cursor.MOVE);
             }
         }
@@ -122,7 +122,7 @@ public class PanHandlerFX extends AbstractMouseHandlerFX {
      */
     @Override
     public void handleMouseDragged(ChartCanvas canvas, MouseEvent e) {
-        if (this.panLast == null) {
+        if (panLast == null) {
             //handle panning if we have a start point else unregister
             canvas.clearLiveHandler();
             return;
@@ -132,26 +132,26 @@ public class PanHandlerFX extends AbstractMouseHandlerFX {
         if (chart == null) {
             return;
         }
-        double dx = e.getX() - this.panLast.getX();
-        double dy = e.getY() - this.panLast.getY();
+        double dx = e.getX() - panLast.getX();
+        double dy = e.getY() - panLast.getY();
         if (dx == 0.0 && dy == 0.0) {
             return;
         }
-        double wPercent = -dx / this.panW;
-        double hPercent = dy / this.panH;
+        double wPercent = -dx / panW;
+        double hPercent = dy / panH;
         boolean old = chart.getPlot().isNotify();
         chart.getPlot().setNotify(false);
         Pannable p = (Pannable) chart.getPlot();
         PlotRenderingInfo info = canvas.getRenderingInfo().getPlotInfo();
         if (p.getOrientation().isVertical()) {
-            p.panDomainAxes(wPercent, info, this.panLast);
-            p.panRangeAxes(hPercent, info, this.panLast);
+            p.panDomainAxes(wPercent, info, panLast);
+            p.panRangeAxes(hPercent, info, panLast);
         }
         else {
-            p.panDomainAxes(hPercent, info, this.panLast);
-            p.panRangeAxes(wPercent, info, this.panLast);
+            p.panDomainAxes(hPercent, info, panLast);
+            p.panRangeAxes(wPercent, info, panLast);
         }
-        this.panLast = new Point2D.Double(e.getX(), e.getY());
+        panLast = new Point2D.Double(e.getX(), e.getY());
         chart.getPlot().setNotify(old);
     }
 
@@ -159,10 +159,10 @@ public class PanHandlerFX extends AbstractMouseHandlerFX {
     public void handleMouseReleased(ChartCanvas canvas, MouseEvent e) {  
         //if we have been panning reset the cursor
         //unregister in any case
-        if (this.panLast != null) {
+        if (panLast != null) {
             canvas.setCursor(javafx.scene.Cursor.DEFAULT);
         }
-        this.panLast = null;
+        panLast = null;
         canvas.clearLiveHandler();
     }
 

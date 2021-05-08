@@ -41,7 +41,7 @@ import javafx.scene.input.ScrollEvent;
 import org.jfree.chart.ChartRenderingInfo;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.fx.ChartCanvas;
-import org.jfree.chart.plot.PiePlot;
+import org.jfree.chart.plot.pie.PiePlot;
 import org.jfree.chart.plot.Plot;
 import org.jfree.chart.plot.PlotRenderingInfo;
 import org.jfree.chart.plot.Zoomable;
@@ -62,8 +62,7 @@ public class ScrollHandlerFX extends AbstractMouseHandlerFX
      */
     public ScrollHandlerFX(String id) {
         super(id, false, false, false, false);
-        this.zoomFactor = 0.1;
-    };
+    }
 
     /**
      * Returns the zoom factor.  The default value is 0.10 (ten percent).
@@ -71,7 +70,7 @@ public class ScrollHandlerFX extends AbstractMouseHandlerFX
      * @return The zoom factor. 
      */
     public double getZoomFactor() {
-        return this.zoomFactor;
+        return zoomFactor;
     }
 
     /**
@@ -96,7 +95,7 @@ public class ScrollHandlerFX extends AbstractMouseHandlerFX
             handleZoomable(canvas, zoomable, e);
         }
         else if (plot instanceof PiePlot) {
-            PiePlot pp = (PiePlot) plot;
+            PiePlot<?> pp = (PiePlot<?>) plot;
             pp.handleMouseWheelRotation((int) e.getDeltaY());
         }
     }
@@ -123,7 +122,7 @@ public class ScrollHandlerFX extends AbstractMouseHandlerFX
             boolean notifyState = plot.isNotify();
             plot.setNotify(false);
             int clicks = (int) e.getDeltaY();
-            double zf = 1.0 + this.zoomFactor;
+            double zf = 1.0 + zoomFactor;
             if (clicks < 0) {
                 zf = 1.0 / zf;
             }

@@ -38,7 +38,7 @@ package org.jfree.chart.fx.overlay;
 
 import java.awt.Graphics2D;
 import org.jfree.chart.fx.ChartCanvas;
-import org.jfree.chart.panel.Overlay;
+import org.jfree.chart.swing.Overlay;
 
 /**
  * An overlay that can be added to a {@link ChartCanvas}.
@@ -51,6 +51,5 @@ public interface OverlayFX extends Overlay {
      * @param g2  the graphics target ({@code null} not permitted).
      * @param chartCanvas  the chart canvas ({@code null} not permitted).
      */
-    public void paintOverlay(Graphics2D g2, ChartCanvas chartCanvas);
-
+    void paintOverlay(Graphics2D g2, ChartCanvas chartCanvas);
 }
