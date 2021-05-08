@@ -55,13 +55,13 @@ public class ChartMouseEventFX extends EventObject implements Serializable {
     private static final long serialVersionUID = -682393837314562149L;
 
     /** The chart that the mouse event relates to. */
-    private JFreeChart chart;
+    private final JFreeChart chart;
 
     /** The Java mouse event that triggered this event. */
-    private MouseEvent trigger;
+    private final MouseEvent trigger;
 
     /** The chart entity (if any). */
-    private ChartEntity entity;
+    private final ChartEntity entity;
 
     /**
      * Constructs a new event.
@@ -86,7 +86,7 @@ public class ChartMouseEventFX extends EventObject implements Serializable {
      * @return The chart (never {@code null}).
      */
     public JFreeChart getChart() {
-        return this.chart;
+        return chart;
     }
 
     /**
@@ -95,7 +95,7 @@ public class ChartMouseEventFX extends EventObject implements Serializable {
      * @return The event (never {@code null}).
      */
     public MouseEvent getTrigger() {
-        return this.trigger;
+        return trigger;
     }
 
     /**
@@ -104,7 +104,7 @@ public class ChartMouseEventFX extends EventObject implements Serializable {
      * @return The chart entity (possibly {@code null}).
      */
     public ChartEntity getEntity() {
-        return this.entity;
+        return entity;
     }
 
 }

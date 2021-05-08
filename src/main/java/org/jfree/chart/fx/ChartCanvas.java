@@ -51,23 +51,22 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.text.FontSmoothingType;
-import org.jfree.chart.ChartMouseEvent;
 import org.jfree.chart.ChartRenderingInfo;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.event.ChartChangeEvent;
 import org.jfree.chart.event.ChartChangeListener;
-import org.jfree.chart.event.OverlayChangeEvent;
-import org.jfree.chart.event.OverlayChangeListener;
 import org.jfree.chart.fx.interaction.AnchorHandlerFX;
-import org.jfree.chart.fx.interaction.DispatchHandlerFX;
 import org.jfree.chart.fx.interaction.ChartMouseListenerFX;
-import org.jfree.chart.fx.interaction.TooltipHandlerFX;
-import org.jfree.chart.fx.interaction.ScrollHandlerFX;
-import org.jfree.chart.fx.interaction.PanHandlerFX;
+import org.jfree.chart.fx.interaction.DispatchHandlerFX;
 import org.jfree.chart.fx.interaction.MouseHandlerFX;
+import org.jfree.chart.fx.interaction.PanHandlerFX;
+import org.jfree.chart.fx.interaction.ScrollHandlerFX;
+import org.jfree.chart.fx.interaction.TooltipHandlerFX;
 import org.jfree.chart.fx.overlay.OverlayFX;
 import org.jfree.chart.plot.PlotRenderingInfo;
-import org.jfree.chart.util.Args;
+import org.jfree.chart.swing.ChartMouseEvent;
+import org.jfree.chart.swing.OverlayChangeEvent;
+import org.jfree.chart.swing.OverlayChangeListener;
 import org.jfree.fx.FXGraphics2D;
 import org.jfree.fx.FXHints;
 
@@ -325,7 +324,7 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * @param overlay  the overlay ({@code null} not permitted).
      */
     public void addOverlay(OverlayFX overlay) {
-        Args.nullNotPermitted(overlay, "overlay");
+        if (overlay == null) throw new IllegalArgumentException("overlay must not be null");
         this.overlays.add(overlay);
         overlay.addChangeListener(this);
         draw();
@@ -337,7 +336,7 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * @param overlay  the overlay to remove ({@code null} not permitted).
      */
     public void removeOverlay(OverlayFX overlay) {
-        Args.nullNotPermitted(overlay, "overlay");
+        if (overlay == null) throw new IllegalArgumentException("overlay must not be null");
         boolean removed = this.overlays.remove(overlay);
         if (removed) {
             overlay.removeChangeListener(this);
@@ -371,7 +370,7 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
      * @param listener  the listener ({@code null} not permitted).
      */
     public void addChartMouseListener(ChartMouseListenerFX listener) {
-        Args.nullNotPermitted(listener, "listener");
+        if (listener == null) throw new IllegalArgumentException("listener must not be null");
         this.chartMouseListeners.add(listener);
     }
 

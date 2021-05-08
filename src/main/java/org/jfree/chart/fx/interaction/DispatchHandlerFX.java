@@ -72,7 +72,7 @@ public class DispatchHandlerFX extends AbstractMouseHandlerFX {
      */
     @Override
     public void handleMousePressed(ChartCanvas canvas, MouseEvent e) {
-        this.mousePressedPoint = new Point2D.Double(e.getX(), e.getY());
+        mousePressedPoint = new Point2D.Double(e.getX(), e.getY());
     }
 
     /**
@@ -106,7 +106,7 @@ public class DispatchHandlerFX extends AbstractMouseHandlerFX {
      */
     @Override
     public void handleMouseClicked(ChartCanvas canvas, MouseEvent e) {
-        if (this.mousePressedPoint == null || canvas.getChart() == null) {
+        if (mousePressedPoint == null || canvas.getChart() == null) {
             return;
         }
         double x = e.getX();

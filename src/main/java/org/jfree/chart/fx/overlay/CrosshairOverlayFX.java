@@ -41,14 +41,14 @@ import java.awt.Shape;
 import java.awt.geom.Rectangle2D;
 import java.util.Iterator;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.api.RectangleEdge;
 import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.fx.ChartCanvas;
 import org.jfree.chart.fx.ChartViewer;
-import org.jfree.chart.panel.CrosshairOverlay;
 import org.jfree.chart.plot.Crosshair;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
-import org.jfree.chart.ui.RectangleEdge;
+import org.jfree.chart.swing.CrosshairOverlay;
 
 /**
  * An overlay for a {@link ChartViewer} that draws crosshairs on a plot.
@@ -64,12 +64,12 @@ public class CrosshairOverlayFX extends CrosshairOverlay implements OverlayFX {
         Rectangle2D dataArea = chartCanvas.getRenderingInfo().getPlotInfo().getDataArea();
         g2.clip(dataArea);
         JFreeChart chart = chartCanvas.getChart();
-        XYPlot plot = (XYPlot) chart.getPlot();
+        XYPlot<?> plot = (XYPlot<?>) chart.getPlot();
         ValueAxis xAxis = plot.getDomainAxis();
         RectangleEdge xAxisEdge = plot.getDomainAxisEdge();
-        Iterator iterator = getDomainCrosshairs().iterator();
+        Iterator<Crosshair> iterator = getDomainCrosshairs().iterator();
         while (iterator.hasNext()) {
-            Crosshair ch = (Crosshair) iterator.next();
+            Crosshair ch = iterator.next();
             if (ch.isVisible()) {
                 double x = ch.getValue();
                 double xx = xAxis.valueToJava2D(x, dataArea, xAxisEdge);
@@ -84,7 +84,7 @@ public class CrosshairOverlayFX extends CrosshairOverlay implements OverlayFX {
         RectangleEdge yAxisEdge = plot.getRangeAxisEdge();
         iterator = getRangeCrosshairs().iterator();
         while (iterator.hasNext()) {
-            Crosshair ch = (Crosshair) iterator.next();
+            Crosshair ch = iterator.next();
             if (ch.isVisible()) {
                 double y = ch.getValue();
                 double yy = yAxis.valueToJava2D(y, dataArea, yAxisEdge);
