@@ -113,6 +113,11 @@ public class ScrollHandlerFX extends AbstractMouseHandlerFX
     	if (canvas.getChart() == null) {
     	    return;
     	}
+        int clicks = (int) e.getDeltaY();
+        if (clicks == 0) {
+            // don't zoom on events with no wheel movement (occurs on Linux)
+            return;
+        }
         // don't zoom unless the mouse pointer is in the plot's data area
         ChartRenderingInfo info = canvas.getRenderingInfo();
         PlotRenderingInfo pinfo = info.getPlotInfo();
@@ -122,7 +127,6 @@ public class ScrollHandlerFX extends AbstractMouseHandlerFX
             // do not notify while zooming each axis
             boolean notifyState = plot.isNotify();
             plot.setNotify(false);
-            int clicks = (int) e.getDeltaY();
             double zf = 1.0 + this.zoomFactor;
             if (clicks < 0) {
                 zf = 1.0 / zf;
