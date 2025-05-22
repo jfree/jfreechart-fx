@@ -56,7 +56,7 @@ import org.jfree.chart.util.ShapeUtils;
 public class ZoomHandlerFX extends AbstractMouseHandlerFX {
 
     /** The viewer is used to overlay the zoom rectangle. */
-    private ChartViewer viewer;
+    private final ChartViewer viewer;
     
     /** The starting point for the zoom. */
     private Point2D startPoint;

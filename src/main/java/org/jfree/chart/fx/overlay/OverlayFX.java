@@ -51,6 +51,6 @@ public interface OverlayFX extends Overlay {
      * @param g2  the graphics target ({@code null} not permitted).
      * @param chartCanvas  the chart canvas ({@code null} not permitted).
      */
-    public void paintOverlay(Graphics2D g2, ChartCanvas chartCanvas);
+    void paintOverlay(Graphics2D g2, ChartCanvas chartCanvas);
 
 }

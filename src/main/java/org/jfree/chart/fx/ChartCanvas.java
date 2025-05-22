@@ -97,7 +97,7 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
     /**
      * The graphics drawing context (will be an instance of FXGraphics2D).
      */
-    private Graphics2D g2;
+    private final Graphics2D g2;
    
     /** 
      * The anchor point (can be null) is usually updated to reflect the most 
@@ -113,13 +113,13 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
     private Tooltip tooltip;
     
     /** 
-     * A flag that controls whether or not tooltips will be generated from the
+     * A flag that controls whether tooltips will be generated from the
      * chart as the mouse pointer moves over it.
      */
     private boolean tooltipEnabled;
     
     /** Storage for registered chart mouse listeners. */
-    private transient List<ChartMouseListenerFX> chartMouseListeners;
+    private final transient List<ChartMouseListenerFX> chartMouseListeners;
 
     /** The current live handler (can be null). */
     private MouseHandlerFX liveHandler;
@@ -189,12 +189,12 @@ public class ChartCanvas extends Canvas implements ChartChangeListener,
 
         this.overlays = FXCollections.observableArrayList();
 
-        setOnMouseMoved(e -> handleMouseMoved(e));
-        setOnMouseClicked(e -> handleMouseClicked(e));
-        setOnMousePressed(e -> handleMousePressed(e));
-        setOnMouseDragged(e -> handleMouseDragged(e));
-        setOnMouseReleased(e -> handleMouseReleased(e));
-        setOnScroll(e -> handleScroll(e));
+        setOnMouseMoved(this::handleMouseMoved);
+        setOnMouseClicked(this::handleMouseClicked);
+        setOnMousePressed(this::handleMousePressed);
+        setOnMouseDragged(this::handleMouseDragged);
+        setOnMouseReleased(this::handleMouseReleased);
+        setOnScroll(this::handleScroll);
     }
     
     /**

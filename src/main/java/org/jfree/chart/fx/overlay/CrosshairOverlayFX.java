@@ -39,7 +39,6 @@ package org.jfree.chart.fx.overlay;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.Rectangle2D;
-import java.util.Iterator;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.fx.ChartCanvas;
@@ -67,9 +66,7 @@ public class CrosshairOverlayFX extends CrosshairOverlay implements OverlayFX {
         XYPlot plot = (XYPlot) chart.getPlot();
         ValueAxis xAxis = plot.getDomainAxis();
         RectangleEdge xAxisEdge = plot.getDomainAxisEdge();
-        Iterator iterator = getDomainCrosshairs().iterator();
-        while (iterator.hasNext()) {
-            Crosshair ch = (Crosshair) iterator.next();
+        for (Crosshair ch : getDomainCrosshairs()) {
             if (ch.isVisible()) {
                 double x = ch.getValue();
                 double xx = xAxis.valueToJava2D(x, dataArea, xAxisEdge);
@@ -82,9 +79,7 @@ public class CrosshairOverlayFX extends CrosshairOverlay implements OverlayFX {
         }
         ValueAxis yAxis = plot.getRangeAxis();
         RectangleEdge yAxisEdge = plot.getRangeAxisEdge();
-        iterator = getRangeCrosshairs().iterator();
-        while (iterator.hasNext()) {
-            Crosshair ch = (Crosshair) iterator.next();
+        for (Crosshair ch : getRangeCrosshairs()) {
             if (ch.isVisible()) {
                 double y = ch.getValue();
                 double yy = yAxis.valueToJava2D(y, dataArea, yAxisEdge);

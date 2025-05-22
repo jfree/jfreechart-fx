@@ -63,7 +63,7 @@ public class ScrollHandlerFX extends AbstractMouseHandlerFX
     public ScrollHandlerFX(String id) {
         super(id, false, false, false, false);
         this.zoomFactor = 0.1;
-    };
+    }
 
     /**
      * Returns the zoom factor.  The default value is 0.10 (ten percent).
@@ -96,7 +96,7 @@ public class ScrollHandlerFX extends AbstractMouseHandlerFX
             handleZoomable(canvas, zoomable, e);
         }
         else if (plot instanceof PiePlot) {
-            PiePlot pp = (PiePlot) plot;
+            PiePlot<?> pp = (PiePlot<?>) plot;
             pp.handleMouseWheelRotation((int) e.getDeltaY());
         }
     }
