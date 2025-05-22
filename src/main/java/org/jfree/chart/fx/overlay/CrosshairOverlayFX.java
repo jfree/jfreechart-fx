@@ -54,6 +54,13 @@ import org.jfree.chart.ui.RectangleEdge;
  */
 public class CrosshairOverlayFX extends CrosshairOverlay implements OverlayFX {
 
+    /**
+     * Creates a new instance.
+     */
+    public CrosshairOverlayFX() {
+        super();
+    }
+
     @Override
     public void paintOverlay(Graphics2D g2, ChartCanvas chartCanvas) {
         if (chartCanvas.getRenderingInfo() == null) {
@@ -92,5 +99,4 @@ public class CrosshairOverlayFX extends CrosshairOverlay implements OverlayFX {
         }
         g2.setClip(savedClip);
     }
-    
 }
