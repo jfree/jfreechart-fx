@@ -3,7 +3,7 @@ JFreeChart-FX
 
 Version 2.0.2, 22 May 2025.
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.jfree/org.jfree.chart.fx/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.jfree/org.jfree.chart.fx) [![javadoc](https://javadoc.io/badge2/org.jfree/org.jfree.chart.fx/javadoc.svg)](https://javadoc.io/doc/org.jfree/org.jfree.chart.fx)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jfree/org.jfree.chart.fx)](https://central.sonatype.com/artifact/org.jfree/org.jfree.chart.fx/versions) [![javadoc](https://javadoc.io/badge2/org.jfree/org.jfree.chart.fx/javadoc.svg)](https://javadoc.io/doc/org.jfree/org.jfree.chart.fx)
 
 Overview
 --------
