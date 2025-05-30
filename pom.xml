@@ -49,7 +49,7 @@
     <repositories>
         <repository>
             <id>central</id>
-            <url>https://central.sonatype.com</url>
+            <url>https://repo.maven.apache.org/maven2</url>
         </repository>
         <repository>
             <id>central-snapshots</id>
