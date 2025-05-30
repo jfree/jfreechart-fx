@@ -56,7 +56,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>21.0.4</version>
+            <version>21.0.5</version>
         </dependency>
 
         <!-- FXGraphics2D is used for JavaFX support. -->
@@ -90,8 +90,8 @@
             <id>central</id>
             <url>https://central.sonatype.com/repository/maven-snapshots/</url>
         </snapshotRepository>
-    </distributionManagement>    
-    
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
@@ -114,7 +114,7 @@
                 <configuration>
                     <source>${project.source.level}</source>
                     <target>${project.target.level}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>                
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
 
