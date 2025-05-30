@@ -46,7 +46,12 @@
         <connection>scm:git:git:https://github.com/jfree/jfreechart-fx.git</connection>
         <url>https://github.com/jfree/jfreechart-fx</url>
     </scm>
-
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://central.sonatype.com</url>
+        </repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.jfree</groupId>
