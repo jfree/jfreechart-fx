@@ -182,6 +182,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.source.level>11</project.source.level>
         <project.target.level>11</project.target.level>
+        <project.scm.id>maven</project.scm.id>
     </properties>
 
     <profiles>
