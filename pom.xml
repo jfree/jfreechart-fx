@@ -62,19 +62,17 @@
             <artifactId>jfreechart</artifactId>
             <version>1.5.7-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>21.0.5</version>
-        </dependency>
-
         <!-- FXGraphics2D is used for JavaFX support. -->
         <dependency>
             <groupId>org.jfree</groupId>
             <artifactId>org.jfree.fxgraphics2d</artifactId>
             <version>2.1.6-SNAPSHOT</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>24.0.1</version>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -121,7 +119,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.0</version>
                 <configuration>
-                    <release>11</release>
+                    <release>22</release>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>

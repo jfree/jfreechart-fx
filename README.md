@@ -38,6 +38,9 @@ https://github.com/jfree/jfree-fxdemos
 
 History
 -------
+##### Next release
+
+- requires Java 22 or later
 
 ##### Version 2.0.2 (22 May 2025)
 
